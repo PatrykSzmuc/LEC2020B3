@@ -2,19 +2,22 @@
 % Chapter 4.1 to 4.4
 
 
-% IF statement
-num = rand   
+%% IF statement
+num = 0.8  %rand   
 
 if num < 0.5
     disp('The number is smaller than 0.5')
+    y = 2 * num;
+    
 end
 
 
-% IF/ELSE statement
-num = rand;
+%% IF/ELSE statement
+num = 0.9 % rand;
 
 if num < 0.5
     fprintf('The number %.2f is smaller than 0.5\n', num)
+    t = 5;
 else
     fprintf('The number %.2f is greater than or equal to 0.5\n', num)
 end
@@ -28,7 +31,7 @@ end
 % CHECK OUT the "salesstatus.m" example script.
 
 
-% Nested IF/ELSE statements that can be merged into 
+%% Nested IF/ELSE statements that can be merged into 
 % a more compact IF/ELSEIF/ELSE statements.
 
 num = 0.6; %rand;
@@ -48,12 +51,14 @@ if num < 0.5
     fprintf('A: The number %.2f is smaller than 0.5\n', num)
 elseif num < 0.75
     fprintf('B: The number %.2f is greater than or equal to 0.5 but less than 0.75\n', num)
+elseif num < 0.4
+    disp('Hello, this will never be displayed :(')
 else
     fprintf('C: The number %.2f is greater than or equal to 0.75\n', num)
 end
 
 
-% A loooooong IF/ELSEIF/ELSE statements with all conditions testing EQUALITY
+%% A loooooong IF/ELSEIF/ELSE statements with all conditions testing EQUALITY
 clc
 day = input('Enter the day number (Monday = 1, etc): ');
 if day == 1
@@ -69,11 +74,12 @@ else
 end
 
 
-% SWITCH/CASE statement: a better alternative
+%% SWITCH/CASE statement: a better alternative
 day = input('Enter the day number (Monday = 1, etc): ');
 switch day
     case 1
         disp('It''s Monday')
+        y = 25;
     case 2
         disp('Yay! it''s ENCMP100 day')
     case 3
@@ -84,7 +90,7 @@ switch day
         disp('Can''t wait until next Tuesday')
 end
 
-% Even more compact version ...
+%% Even more compact version ...
 day = input('Enter the day number (Monday = 1, etc): ');
 switch day
     case 1
@@ -93,6 +99,10 @@ switch day
         disp('Yay! it''s ENCMP100 day')
     case 3
         disp('It''s Wednesday')
-    otherwise
+    case {5, 6, 7}
         disp('Can''t wait until next Tuesday')
+    otherwise
+        disp('Are you really from Earth??')
+        
+        
 end
