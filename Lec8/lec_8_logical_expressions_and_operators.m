@@ -21,9 +21,6 @@ var2 = false;
 
 
 inputVal = input('Enter a number: ');
-isZero = inputVal == 0;
-isPositive = inputVal > 0;
-isNegative = inputVal < 0;
 
 
 % logical operators
